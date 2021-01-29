@@ -3,13 +3,6 @@ import * as prng from './lib/prn_generators';
 import * as t from './lib/tests';
 import * as varg from './lib/var_generators';
 
-console.log(varg.Exponential(3,[0.9725,0.8135,0.1625,0.0035,0.7325,0.0175,0.4125,0.3300,0.1725,0.9836]));
-console.log(varg.Uniform(95,100,[0.3725,0.2156,0.8231,0.7135,0.1520,0]));
-console.log(varg.Bernoulli(0.2,[0.3125,0.1756,0.8135,0.0867,0.1956,0.7425,0.1815,0.2151,0.4225,0.1720]));
-console.log(varg.noDensity([1,2,2,1,3,0,3,1,3],[0.8123,0.1625,0.3125]));
-console.log(varg.Earlang(3,8,[0.72,0.48,0.36,0.04,0.63,0.17,0.96,0.88,0.97,0.65,0.56,0.50,0.33,0.91,0.79]));
-console.log(varg.Binomial(5,5,0.03,[0.49,0.32,0.15,0.01,0.45,0.11,0.85,0.93,0.99,0.61,0.57,0.92,0.84,0.74,0.82,0.62,0.01,0.68,0.98,0.99,0.34,0.98,0.99,0.02,0.98]));
-
 const generateData = (generator:string, count:number, seed:string = ((Date.now() / 1000 | 0).toString())) => {
    switch (generator){
        case '1': return prng.MSM_generator(seed,count); 
