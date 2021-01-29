@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRNG</title>
+</head>
+<body>
+    <div class="generator-machine">
+        <h2>GENERADOR DE NUMEROS PSEUDOALEATORIOS</h2>
+        <form id="form_1">
+            <div class="input-group">
+                <label for="cant">Cantidad de numeros</label>
+                <input type="text" id="cant" name="cant">
+            </div>
+            <!-- <div class="btn-container">
+                <button type="button" id="msm" data-generatorid="1">Cuadrados Medios</button>
+                <button type="button" id="mpm" data-generatorid="2">Productos Medios</button>
+                <button type="button" id="cm" data-generatorid="3">Multiplicador Constante</button>
+                <button type="button" id="lc" data-generatorid="4">Linear Congruencial</button>
+                <button type="button" id="mc" data-generatorid="5">Congruencial Multiplicativo</button>
+                <button type="button" id="ac" data-generatorid="6">Congruencial Aditivo</button>
+                <button type="button" id="qc" data-generatorid="7">Congruencial Cuandratico</button>
+                <button type="button" id="bbs" data-generatorid="8">Blum Blum & Shub</button>
+            </div> -->
+            <div class="container">
+                <label for="generator-options">Elegir el generador a usar: </label>
+                <select name="generator" id="generator-options">
+                    <option value="1">Cuadrados Medios</option>
+                    <option value="2">Productos Medios</option>
+                    <option value="3">Multiplicador Constante</option>
+                    <option value="4">Linear Congruencial</option>
+                    <option value="5">Congruencial Multiplicativo</option>
+                    <option value="6">Congruencial Aditivo</option>
+                    <option value="7">Congruencial Cuadratico</option>
+                    <option value="8">Blum Blum & Shub</option>
+                </select>
+            </div>
+            <input type="submit" value="Generar">
+        </form>
+        <button type="button" id="download" disabled>Descargar csv</button>
+    </div>
+    <div class="test">
+        <h2>PRUEBAS DE ALEATORIEDAD</h2>
+        <div class="mode">
+            <input type="radio" id="import" name="mode" checked>
+            <label for="import">Importar numeros</label>
+            <label id="ng" style="display: none;"><input type="radio" id="use" name="mode">
+            Usar numeros generados</label>
+        </div>
+        <input type="file" id="prng-file" accept=".csv">
+        <form id="form_2">
+            <div class="pruebas">
+                <label><input type="checkbox" value="1" class="tst">Prueba de las medias</label><br>
+                <label><input type="checkbox" value="2" class="tst">Prueba de la varianza</label><br>
+                <label><input type="checkbox" value="3" class="tst">Prueba Chi-cuadrada</label><br>
+                <label><input type="checkbox" value="4" class="tst">Prueba Kolmogorov-Smirnov</label><br>
+                <label><input type="checkbox" value="5" class="tst">Prueba de corridas arriba y abajo</label><br>
+                <label><input type="checkbox" value="6" class="tst">Prueba de corridas arriba y abajo de la media</label><br>
+                <label><input type="checkbox" value="7" class="tst">Prueba de Poker</label><br>
+                <label><input type="checkbox" value="8" class="tst">Prueba de huecos</label><br>
+            </div>
+            <button type="submit" id="btn">Realizar pruebas</button>
+        </form>
+        <div class="res">
+            <ul>
+                
+            </ul>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
